@@ -1,89 +1,102 @@
 var questionCounter = 0;
-var ingredientCounter = 0;
-
-var questionList = [
-new Question('Do ye like yer driks strong?', [new Ingredient('glug of rum'), new Ingredient('slug of whiskey')]),
-
-{
-    question: 'Do ye like yer drinks strong?',
-    ingredients: ['Glug of rum', 'slug of whisky', 'splash of gin']
-}, {
-    question: 'Do ye like it with a salty tang',
-    ingredients: ['Olive on a stick', 'salt-dusted rim', 'rasher of bacon']
-}, {
-    question: 'Are ye a lubber who likes it bitter',
-    ingredients: ['Shake of bitters', 'splash of tonic', 'twist of lemon peel']
-}, {
-    question: 'Would ye like a bit of sweetness with yer poison?',
-    ingredients: ['Sugar cube', 'spoonful of honey', 'splash of cola']
-}, {
-    question: 'Are ye one for a fruity finish?',
-    ingredients: ['Slice of orange', 'dash of cassis', 'cherry on top']
-}];
+// var ingredientCounter = 0;
 
 
-$(document).ready(function() {
+var question = [ 
+'Do ye like yer drinks strong?',
+'Do ye like it with a salty tang?', 
+'Are ye a lubber who likes it bitter?', 
+'Would ye like a bit of sweetness with yer poison?', 
+'Are ye one for a fruity finish?'
+]
 
-    $(".user-choice").hide();
-
-    //Order Button 
-    $(".order-button").click(function() {
-        $(".start-page").hide();
-        $(".user-choice").show();
-        for (var i = 0; i < questionList[questionCounter].question.length; i++) {
-            $(".print-question").text(questionList[questionCounter].question);
-
-        }
-
-
-    });
-
-    //Nay! Button
-    $(".no-button").click(function() {
-        questionCounter++;
-        ingredientCounter++;
-        for (var i = 0; i < questionList[questionCounter].question.length; i++) {
-            $(".print-question").text(questionList[questionCounter].question);
-            $(".random-drink").empty();
-        }
-
-    });
-
-    //Aye! Button
-    $(".yes-button").click(function() {
-        $(".random-drink").empty();
-        var rand = questionList[ingredientCounter].ingredients[Math.floor(Math.random() * questionList[ingredientCounter].ingredients.length)];
-        var html = '';
-        html += '<li>' + rand + '</li>';
-        $('.random-drink').append(html);
-
-    });
+var ingredients = [
+['Glug of rum', 'slug of whisky', 'splash of gin'],
+['Olive on a stick', 'salt-dusted rim', 'rasher of bacon'],
+['Shake of bitters', 'splash of tonic', 'twist of lemon peel'],
+['Sugar cube', 'spoonful of honey', 'splash of cola'],
+['Slice of orange', 'dash of cassis', 'cherry on top']
+];
 
 
-
-
-
-
-});
-
-/*
-
-function Bartender(question, answer) {
+function Bartender(question, ingredients) {
     this.question = question;
-    this.answer = answer;
+    this.ingredients = ingredients;
 }
 
-Bartender.prototype.createDrink()
-var Bartender = function() {
-    createDrink = function() {
+var newObject = new Bartender(question, ingredients[0]);
 
-
-    }
-
-
+Bartender.prototype.randomDrink = function() {
+var rand = ingredients[ingredientCounter][Math.floor(Math.random() * ingredients[ingredientCounter].length)];
 }
 
-*/
+console.log(newObject.question[questionCounter]);
+
+
+
+
+// $(document).ready(function() {
+
+//     $(".user-choice").hide();
+
+//     //Order Button 
+//     $(".order-button").click(function() {
+//         $(".start-page").hide();
+//         $(".user-choice").show();
+//         for (var i = 0; i < questionList[questionCounter].question.length; i++) {
+//             $(".print-question").text(questionList[questionCounter].question);
+
+//         }
+
+
+//     });
+
+//     //Nay! Button
+//     $(".no-button").click(function() {
+//         questionCounter++;
+//         ingredientCounter++;
+//         for (var i = 0; i < questionList[questionCounter].question.length; i++) {
+//             $(".print-question").text(questionList[questionCounter].question);
+//             $(".random-drink").empty();
+//         }
+
+//     });
+
+//     //Aye! Button
+//     $(".yes-button").click(function() {
+//         $(".random-drink").empty();
+        
+//         var html = '';
+//         html += '<li>' + rand + '</li>';
+//         $('.random-drink').append(html);
+
+//     });
+
+// });
+
+
+
+
+
+// var newObject = new Bartender('Do ye like yer driks strong?', [new Ingredient('glug of rum'), new Ingredient('slug of whiskey')]);
+
+
+
+
+
+
+
+// Bartender.prototype.createDrink()
+// var Bartender = function() {
+//     createDrink = function() {
+
+
+//     }
+
+
+// }
+
+
 
 
 /*
@@ -104,14 +117,15 @@ var Drink = function (ingredients) {
 /*************************Notes**********************/
 
 /*
-User Clicks on Order Button - the welcome page disappears
-                            Done- first question appears 
-                            Done- with two buttons, yes and no
-                            Done- if user click yes, display random drink
-                            Done- if use click no, move on to the next question
+User Clicks on Order Button - create an array for questions
+                            - create an array for ingredients
+                            - constructor function that refers to the variables from above
+                          
 
 */
 
+// var questionList = [
+// new Question('Do ye like yer driks strong?', [new Ingredient('glug of rum'), new Ingredient('slug of whiskey')]),
 
 
 
