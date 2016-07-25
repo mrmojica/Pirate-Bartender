@@ -63,8 +63,8 @@ Create a random drink
 
 var newQuestion = new Bartender(questionList[questionCounter].question);
 	
-// get value of yes or no
-console.log(newQuestion);
+// get value of yes or no.
+console.log(newQuestion); 
 
 
 
