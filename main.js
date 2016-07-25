@@ -1,7 +1,10 @@
 var questionCounter = 0;
 var ingredientCounter = 0;
 
-var questionList = [{
+var questionList = [
+new Question('Do ye like yer driks strong?', [new Ingredient('glug of rum'), new Ingredient('slug of whiskey')]),
+
+{
     question: 'Do ye like yer drinks strong?',
     ingredients: ['Glug of rum', 'slug of whisky', 'splash of gin']
 }, {
@@ -63,8 +66,39 @@ $(document).ready(function() {
 
 });
 
+/*
+
+function Bartender(question, answer) {
+    this.question = question;
+    this.answer = answer;
+}
+
+Bartender.prototype.createDrink()
+var Bartender = function() {
+    createDrink = function() {
 
 
+    }
+
+
+}
+
+*/
+
+
+/*
+
+Constructor Idea?
+
+var ingredients = {
+    strong: [ 'ing1', 'ing2'],
+}
+
+var Drink = function (ingredients) {
+    this.strong = ingredients.strong;
+}
+
+*/
 
 
 /*************************Notes**********************/
@@ -73,8 +107,8 @@ $(document).ready(function() {
 User Clicks on Order Button - the welcome page disappears
                             Done- first question appears 
                             Done- with two buttons, yes and no
-                            Working on it- if user click yes, display random drink
-                            Working on it- if use click no, move on to the next question
+                            Done- if user click yes, display random drink
+                            Done- if use click no, move on to the next question
 
 */
 
