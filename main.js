@@ -1,5 +1,5 @@
 var questionCounter = 0;
-// var ingredientCounter = 0;
+var ingredientCounter = 0;
 
 
 var question = [ 
@@ -19,48 +19,60 @@ var ingredients = [
 ];
 
 
-function Bartender(question, ingredients) {
+function Bartender(question, ingredients, choice) {
     this.question = question;
     this.ingredients = ingredients;
+    this.choice = choice;
 }
 
-var newObject = new Bartender(question, ingredients[0]);
+var choice = $('.yes-button').val();
 
-Bartender.prototype.randomDrink = function() {
-var rand = ingredients[ingredientCounter][Math.floor(Math.random() * ingredients[ingredientCounter].length)];
-}
-
-console.log(newObject.question[questionCounter]);
-
-
+var askQuestion = new Bartender(question[questionCounter], ingredients[ingredientCounter], choice);
+var askQuestion2 = new Bartender(question[questionCounter], ingredients[ingredientCounter], choice);
+var askQuestion3 = new Bartender(question[questionCounter], ingredients[ingredientCounter], choice);
+var askQuestion4 = new Bartender(question[questionCounter], ingredients[ingredientCounter], choice);
+var askQuestion5 = new Bartender(question[questionCounter], ingredients[ingredientCounter], choice);
 
 
-// $(document).ready(function() {
-
-//     $(".user-choice").hide();
-
-//     //Order Button 
-//     $(".order-button").click(function() {
-//         $(".start-page").hide();
-//         $(".user-choice").show();
-//         for (var i = 0; i < questionList[questionCounter].question.length; i++) {
-//             $(".print-question").text(questionList[questionCounter].question);
-
-//         }
+console.log(askQuestion.question, askQuestion.ingredients, askQuestion.choice);
 
 
-//     });
+// Bartender.prototype.randomDrink = function() {
+// var rand = ingredients[ingredientCounter][Math.floor(Math.random() * ingredients[ingredientCounter].length)];
+// }
 
-//     //Nay! Button
-//     $(".no-button").click(function() {
-//         questionCounter++;
-//         ingredientCounter++;
-//         for (var i = 0; i < questionList[questionCounter].question.length; i++) {
-//             $(".print-question").text(questionList[questionCounter].question);
-//             $(".random-drink").empty();
-//         }
 
-//     });
+$(document).ready(function() {
+
+    $(".user-choice").hide();
+
+    //Order Button 
+    $(".order-button").click(function() {
+        $(".start-page").hide();
+        $(".user-choice").show();
+        for (var i = 0; i < question[questionCounter].length; i++) {
+            $(".print-question").text(askQuestion.question[questionCounter]);
+
+        }
+
+
+    });
+
+
+    //Nay! Button
+    // $(".no-button").click(function() {
+    //     questionCounter++;
+    //     ingredientCounter++;
+
+    // if (questionCounter <= 4) 
+    // {
+    //     for (var i = 0; i < question[questionCounter].length; i++) {
+    //         $(".print-question").text(question[questionCounter]);
+    //         $(".random-drink").empty();
+    //     }
+    // }
+
+    // });
 
 //     //Aye! Button
 //     $(".yes-button").click(function() {
@@ -72,7 +84,7 @@ console.log(newObject.question[questionCounter]);
 
 //     });
 
-// });
+});
 
 
 
