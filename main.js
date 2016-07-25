@@ -57,6 +57,9 @@ var ingredients = {
     fruity: ['Slice of orange', 'dash of cassis', 'cherry on top']
 }
 
+//create a constructor function that selects ingredients
+
+
     var questionCounter = 0;
     var choiceCounter = 0;
 
