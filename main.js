@@ -49,6 +49,14 @@ Create a random drink
         }
     ];
 
+var ingredients = {
+    strong: ['Glug of rum', 'slug of whisky', 'splash of gin'],
+    salty: ['Olive on a stick', 'salt-dusted rim', 'rasher of bacon'],
+    bitter: ['Shake of bitters', 'splash of tonic', 'twist of lemon peel'],
+    sweet: ['Sugar cube', 'spoonful of honey', 'splash of cola'],
+    fruity: ['Slice of orange', 'dash of cassis', 'cherry on top']
+}
+
     var questionCounter = 0;
     var choiceCounter = 0;
 
